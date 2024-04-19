@@ -7,6 +7,9 @@ import { FaCar } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa";
 import { RiLogoutCircleLine } from "react-icons/ri";
+import { TbBrandAnsible } from "react-icons/tb";
+import { IoLogoModelS } from "react-icons/io";
+import { TbChartHistogram } from "react-icons/tb";
 
 function Dashboard() {
   return (
@@ -68,13 +71,42 @@ function Dashboard() {
              
              
               <li className="w-100">
+              <Link 
+                   to="/addbrands"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                   <TbBrandAnsible  size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">Brands</span>
+                </Link>
+              </li>
+              <li className="w-100">
               <Link
+                  to="/addmodels"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                   <IoLogoModelS  size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">Models</span>
+                </Link>
+              </li>
+              <li className="w-100">
+              <Link
+                  to="/addplants"
                   className="nav-link px-0 align-middle text-white"
                 >
                    <RiLogoutCircleLine size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Logout</span>
+                  <span className="ms-2 d-none d-sm-inline">Plants</span>
                 </Link>
               </li>
+              <li className="w-100">
+              <Link
+                  to="/addsales"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                   <TbChartHistogram  size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">Sales</span>
+                </Link>
+              </li>
+
             </ul>
           </div>
         </div>

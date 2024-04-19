@@ -7,14 +7,19 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import './home.css';
 import axios from 'axios';
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { TbBrandAnsible } from "react-icons/tb";
+import { IoLogoModelS } from "react-icons/io";
+import { TbChartHistogram } from "react-icons/tb";
 
 const style = {
     position: 'absolute',
-    top: '78%',
+    top: '57%',
     left: '55%',
+    bottom:'2%',
     transform: 'translate(-50%, -50%)',
     width: 850,
-    height: 900,
+    height: 700,
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 2,
@@ -89,6 +94,32 @@ const Home = () => {
                     <MdPersonPinCircle size={"3em"} />
                     <h2>Dealers</h2>
                 </div>
+            </div>
+            <div className='row_2'>
+            <div className='box' id='b5' onClick={() => handleOpen('Models')}>
+                <div className='inside_box'>
+                    <IoLogoModelS  size={"3em"} />
+                    <h2>Models</h2>
+                </div>
+            </div>
+            <div className='box' id='b6' onClick={() => handleOpen('Brands')}>
+                <div className='inside_box'>
+                    <TbBrandAnsible size={"3em"} />
+                    <h2>Brands</h2>
+                </div>
+            </div>
+            <div className='box' id='b7' onClick={() => handleOpen('Plants')}>
+                <div className='inside_box'>
+                    < RiLogoutCircleLine size={"3em"} />
+                    <h2>Plants</h2>
+                </div>
+            </div>
+            <div className='box' id='b8' onClick={() => handleOpen('Sales')}>
+                <div className='inside_box'>
+                    <TbChartHistogram  size={"3em"} />
+                    <h2>Sales</h2>
+                </div>
+            </div>
             </div>
             
             <Modal

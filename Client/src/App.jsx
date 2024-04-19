@@ -6,6 +6,10 @@ import AddCustomers from './components/AddCustomers'
 import AddSuppliers from './components/AddSuppliers'
 import AddVehicles from './components/AddVehicles'
 import Home from './components/Home'
+import AddModels from './components/AddModels'
+import AddPlants from './components/AddPlants'
+import AddBrands from './components/AddBrands'
+import AddSales from './components/AddSales'
 
 
 
@@ -18,6 +22,10 @@ function App() {
     <Route path='/addcustomers' element={<AddCustomers/>}></Route>
     <Route path='/addsuppliers' element={ <AddSuppliers/>}></Route>
     <Route path='/addvehicles' element={<AddVehicles/>}></Route>
+    <Route path='/addmodels' element={<AddModels/>}></Route>
+    <Route path='/addplants' element={<AddPlants/>}></Route>
+    <Route path='/addbrands' element={<AddBrands/>}></Route>
+    <Route path='/addsales' element={<AddSales/>}></Route>
     </Route>
     </Routes>
     </BrowserRouter>

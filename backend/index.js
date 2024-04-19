@@ -37,8 +37,29 @@ app.use('/api/addcustomers',addcustomers);
 const addsuppliers = require('./insert/addsuppliers');
 app.use('/api/addsuppliers',addsuppliers);
 
-const deletecustomers = require('./delete/deletecustomers');
-app.use('/api/deletecustomers',deletecustomers);
+const addmodels = require('./insert/addmodels');
+app.use('/api/addmodels',addmodels);
+
+const addplants = require('./insert/addplants');
+app.use('/api/addplants',addplants);
+
+const addbrands = require('./insert/addbrands');
+app.use('/api/addbrands',addbrands);
+
+const addsales = require('./insert/addsales');
+app.use('/api/addsales',addsales);
+
+const addsuppliersplants = require('./insert/addsuppliersplants');
+app.use('/api/addsuppliersplants',addsuppliersplants);
+
+// const addsuppliers = require('./insert/addsuppliers');
+// app.use('/api/addsuppliers',addsuppliers);
+
+// const addsuppliers = require('./insert/addsuppliers');
+// app.use('/api/addsuppliers',addsuppliers);
+
+// const addsuppliers = require('./insert/addsuppliers');
+// app.use('/api/addsuppliers',addsuppliers);
 
 
 app.listen(3000, () => {

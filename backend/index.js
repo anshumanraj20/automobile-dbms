@@ -11,14 +11,19 @@ app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
-const showbrands = require('./fetch/showbrands');
-app.use('/api/showbrands',showbrands);
+app.get('/',(req,res)=>
+{
+  res.send(['hello']);
+})
+
+const showvehicles = require('./fetch/showvehicles');
+app.use('/api/showvehicles',showvehicles);
 
 const showcustomers = require('./fetch/showcustomers');
 app.use('/api/showcustomers',showcustomers);
 
 const showsuppliers = require('./fetch/showsuppliers');
-app.use('/api/showcustomers',showsuppliers);
+app.use('/api/showsuppliers',showsuppliers);
 
 const showdealers = require('./fetch/showdealers');
 app.use('/api/showdealers',showdealers);
@@ -31,6 +36,10 @@ app.use('/api/addcustomers',addcustomers);
 
 const addsuppliers = require('./insert/addsuppliers');
 app.use('/api/addsuppliers',addsuppliers);
+
+const deletecustomers = require('./delete/deletecustomers');
+app.use('/api/deletecustomers',deletecustomers);
+
 
 app.listen(3000, () => {
   console.log('app listening on port 3000!');

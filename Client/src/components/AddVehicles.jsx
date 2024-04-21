@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import './addvehicles.css'
-import axios from 'axios';
+import React, { useState } from "react";
+import "./addvehicles.css";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const AddVehicles = () => {
   const [formData, setFormData] = useState({
-    vin:'',
-    color: '',
-    manufacture_date: '',
-    model_id: '',
-    plant_id: '',
-    supplier_id: '',
+    vin: "",
+    color: "",
+    manufacture_date: "",
+    model_id: "",
+    plant_id: "",
+    supplier_id: "",
   });
 
   const handleChange = (e) => {
@@ -20,23 +21,25 @@ const AddVehicles = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    axios.post('http://localhost:3000/api/addvehicles', formData)
-      .then(response => {
-        console.log('Response:', response.data);
+    axios
+      .post("http://localhost:3000/api/addvehicles", formData)
+      .then((response) => {
+        console.log("Response:", response.data);
+        toast.success("Added vehicle");
       })
-      .catch(error => {
-        console.error('Error:', error);
+      .catch((error) => {
+        console.error("Error:", error);
+        toast.error(error.message);
       });
     setFormData({
-      vin:'',
-      color: '',
-      manufacture_date: '',
-      model_id: '',
-      plant_id: '',
-      supplier_id: '',
+      vin: "",
+      color: "",
+      manufacture_date: "",
+      model_id: "",
+      plant_id: "",
+      supplier_id: "",
     });
-  }
-
+  };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
@@ -103,8 +106,7 @@ const AddVehicles = () => {
       </div>
       <button type="submit">Add Vehicles</button>
     </form>
+  );
+};
 
-  )
-}
-
-export default AddVehicles
+export default AddVehicles;

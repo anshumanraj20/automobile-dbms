@@ -269,12 +269,12 @@ const Home = () => {
                                             )}
                                             {modalContent === 'Sales' && (
                                                 <>
-                                                    <td>{item.sales_Id}</td>
+                                                    <td>{item.sales_id}</td>
                                                     <td>{item.sale_date}</td>
                                                     <td>{item.dealer_id}</td>
                                                     <td>{item.customer_id}</td>
                                                     <td>{item.selling_price}</td>
-                                                    <td>{item.VIN}</td>
+                                                    <td>{item.vin}</td>
                                                 </>
                                             )}
                                             {modalContent === 'Models' && (

@@ -63,6 +63,9 @@ app.use('/api/addbrands', addbrands);
 const addsales = require('./insert/addsales');
 app.use('/api/addsales', addsales);
 
+const adddealers = require('./insert/adddealers');
+app.use('/api/adddealers', adddealers);
+
 const addsuppliersplants = require('./insert/addsuppliersplants');
 app.use('/api/addsuppliersplants', addsuppliersplants);
 

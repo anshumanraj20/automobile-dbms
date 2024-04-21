@@ -10,7 +10,9 @@ import AddModels from './components/AddModels'
 import AddPlants from './components/AddPlants'
 import AddBrands from './components/AddBrands'
 import AddSales from './components/AddSales'
+import Ermodel from './components/Ermodel'
 import OurTeam from './components/OurTeam'
+import AddDealers from './components/AddDealer'
 
 
 
@@ -20,7 +22,9 @@ function App() {
     <Routes>
     <Route path='/' element={<Dashboard/>}>
     <Route path='/' element={<Home/>}></Route>
+    <Route path='/ermodel' element={<Ermodel/>}></Route>
     <Route path='/addcustomers' element={<AddCustomers/>}></Route>
+    <Route path='/adddealers' element={<AddDealers/>}></Route>
     <Route path='/addsuppliers' element={ <AddSuppliers/>}></Route>
     <Route path='/addvehicles' element={<AddVehicles/>}></Route>
     <Route path='/addmodels' element={<AddModels/>}></Route>

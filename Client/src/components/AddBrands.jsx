@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 const AddBrands = () => {
   const [formData, setFormData] = useState({
-    brand_id: '',
-    name: '',
+    Brand_id: "",
+    Brand_name: "",
   });
 
   const handleChange = (e) => {

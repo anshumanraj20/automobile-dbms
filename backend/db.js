@@ -4,7 +4,7 @@ require('dotenv').config();
 const pool = createPool({
     host: 'localhost',
     user: 'root',
-    password: "princenjsr",
+    password: "Bokaro@123",
     database: 'automobile',
     connectionLimit: 10
 });

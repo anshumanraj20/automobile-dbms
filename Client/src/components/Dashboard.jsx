@@ -76,7 +76,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <TbBrandAnsible  size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Brands</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Brands</span>
                 </Link>
               </li>
               <li className="w-100">
@@ -85,7 +85,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <IoLogoModelS  size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Models</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Models</span>
                 </Link>
               </li>
               <li className="w-100">
@@ -94,7 +94,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <RiLogoutCircleLine size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Plants</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Plants</span>
                 </Link>
               </li>
               <li className="w-100">
@@ -103,7 +103,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <TbChartHistogram  size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Sales</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Sales</span>
                 </Link>
               </li>
 

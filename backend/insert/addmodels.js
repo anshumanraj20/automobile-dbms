@@ -7,7 +7,7 @@ router.post('/', (req, res) => {
   
   const insertQuery = `
     INSERT INTO models (model_id, name, brand_id, price,category)
-    VALUES (?, ?, ?, ?,?);
+    VALUES (?, ?, ?, ?, ?);
   `;
 
   const values = [model_id, name, brand_id, price,category];

@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
+import axios from 'axios';
 
 const AddPlants = () => {
     const [formData, setFormData] = useState({
         plant_id:'',
+        plant_name:'',
         plant_address: '',
          
       });
@@ -14,10 +16,28 @@ const AddPlants = () => {
           [name]: value
         });
       };
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+        axios.post('http://localhost:3000/api/addplants', formData)
+          .then(response => {
+            console.log('Response:', response.data);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+    
+        setFormData({
+          plant_id:'',
+          plant_name:'',
+          plant_address: '',
+        });
+      };
+    
     
       
   return (
-    <form className="form-container">
+    <form className="form-container" onSubmit={handleSubmit}>
     <h1>Plant Details</h1>
     <label>
       Plant ID:
@@ -29,10 +49,19 @@ const AddPlants = () => {
       />
     </label>
     <label>
+      plant_name:
+      <input
+        type="text"
+        name="plant_name"
+        value={formData.plant_name}
+        onChange={handleChange}
+      />
+    </label>
+    <label>
        Plant Address:
       <input
         type="text"
-        name="address"
+        name="plant_address"
         value={formData.plant_address}
         onChange={handleChange}
       />

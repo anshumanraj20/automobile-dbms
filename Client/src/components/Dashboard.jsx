@@ -70,6 +70,17 @@ function Dashboard() {
                   </span>
                 </Link>
               </li>
+              <li className="w-100">
+                <Link
+                  to="/adddealers"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                     <FaUsers size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">
+                   Add Dealers
+                  </span>
+                </Link>
+              </li>
              
              
               <li className="w-100">

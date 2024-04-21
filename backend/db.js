@@ -2,11 +2,11 @@ const { createPool } = require("mysql");
 require("dotenv").config();
 
 const pool = createPool({
-  host: "localhost",
-  user: "root",
-  password: "Sql123@",
-  database: "automobile",
-  connectionLimit: 10,
+    host: 'localhost',
+    user: 'root',
+    password: process.env.PASSWORD,
+    database: 'automobile',
+    connectionLimit: 10
 });
 
 pool.query(`SELECT * FROM brands`, (err, results) => {

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-import { toast } from "react-toastify";
+import React, { useState } from 'react';
+import axios from 'axios';
+
 const AddSales = () => {
   const [formData, setFormData] = useState({
-    sales_id: "",
-    sales_date: "",
-    selling_price: "",
+    sales_id: '',
+    sale_date: '',
+    dealer_id: '',
+    customer_id: '',
+    selling_price: '',
+    vin: '',
   });
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,11 +20,41 @@ const AddSales = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError(null); // Clear any previous errors
+
+    // Validation example: check if required fields are filled
+    if (!formData.sales_id || !formData.sale_date) {
+      setError('Please fill out all required fields.');
+      return;
+    }
+
+    axios
+      .post('http://localhost:3000/api/addSales', formData)
+      .then((response) => {
+        console.log('Response:', response.data);
+        setFormData({
+          sales_id: '',
+          sale_date: '',
+          dealer_id: '',
+          customer_id: '',
+          selling_price: '',
+          vin: '',
+        });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError('An error occurred. Please try again later.');
+      });
+  };
+
   return (
-    <form className="form-container">
+    <form className="form-container" onSubmit={handleSubmit}>
       <h1>Sales Details</h1>
+      {error && <div className="error-message">{error}</div>}
       <label>
-        Sales ID:
+        sales_id:
         <input
           type="text"
           name="sales_id"
@@ -27,22 +62,50 @@ const AddSales = () => {
           onChange={handleChange}
         />
       </label>
+
       <label>
-        Sales Date:
+        sale_date:
         <input
           type="date"
-          name="selling_price"
-          value={formData.sales_date}
+          name="sale_date"
+          value={formData.sale_date}
           onChange={handleChange}
         />
       </label>
 
       <label>
-        Sales Price:
+        dealer_id:
         <input
-          type="number"
-          name="sales_date"
-          value={formData.sales_price}
+          type="text"
+          name="dealer_id"
+          value={formData.dealer_id}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        customer_id:
+        <input
+          type="text"
+          name="customer_id"
+          value={formData.customer_id}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        selling_price:
+        <input
+          type="text"
+          name="selling_price"
+          value={formData.selling_price}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        vin:
+        <input
+          type="text"
+          name="vin"
+          value={formData.vin}
           onChange={handleChange}
         />
       </label>

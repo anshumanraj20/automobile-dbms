@@ -11,6 +11,7 @@ import AddPlants from './components/AddPlants'
 import AddBrands from './components/AddBrands'
 import AddSales from './components/AddSales'
 import Ermodel from './components/Ermodel'
+import OurTeam from './components/OurTeam'
 
 
 
@@ -28,6 +29,7 @@ function App() {
     <Route path='/addplants' element={<AddPlants/>}></Route>
     <Route path='/addbrands' element={<AddBrands/>}></Route>
     <Route path='/addsales' element={<AddSales/>}></Route>
+    <Route path='/ourteam' element={<OurTeam/>}></Route>
     </Route>
     </Routes>
     </BrowserRouter>

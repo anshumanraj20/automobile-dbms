@@ -10,6 +10,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { TbBrandAnsible } from "react-icons/tb";
 import { IoLogoModelS } from "react-icons/io";
 import { TbChartHistogram } from "react-icons/tb";
+import { RiTeamFill } from "react-icons/ri";
 import { RxBoxModel } from "react-icons/rx";
 
 function Dashboard() {
@@ -109,6 +110,15 @@ function Dashboard() {
               </li>
               <li className="w-100">
               <Link
+                  to="/ourteam"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                   <RiTeamFill  size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">Our Team</span>
+                </Link>
+              </li>
+              <li className="w-100">
+              <Link
                   to="/ermodel"
                   className="nav-link px-0 align-middle text-white"
                 >
@@ -127,6 +137,7 @@ function Dashboard() {
             </div>
             <Outlet />
         </div>
+        
       </div>
     </div>
   )

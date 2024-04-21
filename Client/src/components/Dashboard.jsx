@@ -10,6 +10,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { TbBrandAnsible } from "react-icons/tb";
 import { IoLogoModelS } from "react-icons/io";
 import { TbChartHistogram } from "react-icons/tb";
+import { RxBoxModel } from "react-icons/rx";
 
 function Dashboard() {
   return (
@@ -104,6 +105,16 @@ function Dashboard() {
                 >
                    <TbChartHistogram  size={"1.5em"}/>
                   <span className="ms-2 d-none d-sm-inline">Add Sales</span>
+                </Link>
+              </li>
+              <li className="w-100">
+              <Link
+                  to="/ermodel"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                  
+                   <RxBoxModel  size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">ER model</span>
                 </Link>
               </li>
 

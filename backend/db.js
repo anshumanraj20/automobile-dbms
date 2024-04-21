@@ -1,19 +1,19 @@
-const { createPool } = require('mysql');
-require('dotenv').config();
+const { createPool } = require("mysql");
+require("dotenv").config();
 
 const pool = createPool({
-    host: 'localhost',
-    user: 'root',
-    password: "princenjsr",
-    database: 'automobile',
-    connectionLimit: 10
+  host: "localhost",
+  user: "root",
+  password: "Sql123@",
+  database: "automobile",
+  connectionLimit: 10,
 });
 
 pool.query(`SELECT * FROM brands`, (err, results) => {
-    if (err) {
-        return console.log("ERROR:->", err);
-    }
-    return console.log(results);
+  if (err) {
+    return console.log("ERROR:->", err);
+  }
+  return console.log(results);
 });
 
 module.exports = pool;

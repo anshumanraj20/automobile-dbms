@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
-import './addcustomer.css'
-import axios from 'axios'
-
+import React, { useState } from "react";
+import "./addcustomer.css";
+import axios from "axios";
+import { toast } from "react-toastify";
 const AddCustomers = () => {
-
   const [formData, setFormData] = useState({
-    customer_id:'',
-    customer_name: '',
-    phone: '',
-    address: '',
-    gender: '',
+    customer_id: "",
+    customer_name: "",
+    phone: "",
+    address: "",
+    gender: "",
     customer_id: "",
   });
 
@@ -17,27 +16,30 @@ const AddCustomers = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    axios.post('http://localhost:3000/api/addcustomers', formData)
-      .then(response => {
-        console.log('Response:', response.data);
+    axios
+      .post("http://localhost:3000/api/addcustomers", formData)
+      .then((response) => {
+        toast.success("Customer added successfully");
+        console.log("Response:", response.data);
       })
-      .catch(error => {
-        console.error('Error:', error);
+      .catch((error) => {
+        toast.error(error.message);
+        console.error("Error ");
       });
 
     setFormData({
-      customer_id:'',
-      customer_name: '',
-      phone: '',
-      address: '',
-      gender: ''
+      customer_id: "",
+      customer_name: "",
+      phone: "",
+      address: "",
+      gender: "",
     });
   };
 
@@ -62,7 +64,7 @@ const AddCustomers = () => {
           onChange={handleChange}
         />
       </label>
-      
+
       <label>
         Phone No:
         <input
@@ -83,11 +85,7 @@ const AddCustomers = () => {
       </label>
       <label>
         Gender:
-        <select
-          name="gender"
-          value={formData.gender}
-          onChange={handleChange}
-        >
+        <select name="gender" value={formData.gender} onChange={handleChange}>
           <option value="">Select</option>
           <option value="M">Male</option>
           <option value="F">Female</option>
@@ -97,7 +95,6 @@ const AddCustomers = () => {
       <button type="submit">Add Customer</button>
     </form>
   );
-}
+};
 
-export default AddCustomers
-
+export default AddCustomers;

@@ -71,6 +71,7 @@ const Home = () => {
     return (
         <div className='container'>
             {error && <p>{error}</p>}
+            
             <div className='box' id='b1' onClick={() => handleOpen('Customers')}>
                 <div className='inside_box' >
                     <FaUsers size={"2.5em"} />
@@ -95,7 +96,7 @@ const Home = () => {
                     <h2>Dealers</h2>
                 </div>
             </div>
-            <div className='row_2'>
+            <div className='row_2 flex '>
             <div className='box' id='b5' onClick={() => handleOpen('Models')}>
                 <div className='inside_box'>
                     <IoLogoModelS  size={"3em"} />
@@ -120,6 +121,7 @@ const Home = () => {
                     <h2>Sales</h2>
                 </div>
             </div>
+            
             </div>
             
             <Modal

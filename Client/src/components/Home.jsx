@@ -71,7 +71,6 @@ const Home = () => {
     return (
         <div className='container'>
             {error && <p>{error}</p>}
-            
             <div className='box' id='b1' onClick={() => handleOpen('Customers')}>
                 <div className='inside_box' >
                     <FaUsers size={"2.5em"} />

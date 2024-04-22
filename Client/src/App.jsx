@@ -12,15 +12,19 @@ import AddBrands from './components/AddBrands'
 import AddSales from './components/AddSales'
 import Ermodel from './components/Ermodel'
 import OurTeam from './components/OurTeam'
+import LandingP from './components/LandingP'
+import Contact from './components/Contact'
 import AddDealers from './components/AddDealer'
 
 
 
 function App() {
   return (
+    <>
     <BrowserRouter>
     <Routes>
-    <Route path='/' element={<Dashboard/>}>
+    <Route path='/landingpage' element={<LandingP/>}></Route>
+    <Route path='/' element={<Dashboard/>}>  
     <Route path='/' element={<Home/>}></Route>
     <Route path='/ermodel' element={<Ermodel/>}></Route>
     <Route path='/addcustomers' element={<AddCustomers/>}></Route>
@@ -32,9 +36,11 @@ function App() {
     <Route path='/addbrands' element={<AddBrands/>}></Route>
     <Route path='/addsales' element={<AddSales/>}></Route>
     <Route path='/ourteam' element={<OurTeam/>}></Route>
+    <Route path='/contact' element={<Contact/>}></Route>
     </Route>
     </Routes>
     </BrowserRouter>
+    </>
   )
 }
 

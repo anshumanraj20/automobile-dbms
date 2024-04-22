@@ -2,7 +2,7 @@
   display:flex; 
   margin: auto;
   height:85vh;
-  width:80vw;
+  width:60vw;
   justify-content: space-around;
   
 
@@ -15,7 +15,7 @@
   border:none solid black;
   display:flex;
   height: 20vh;
-  width:25vw;
+  width:15vw;
   /* padding: 0.2rem; */
   margin:2rem 1rem;
   box-shadow: 0 0.2rem ;
@@ -118,10 +118,7 @@ tr:nth-child(even) {
 }
 
 .row_2{
-  position: absolute;
-  top:16rem;
-  width: 80vw;
-  display: flex;
   
-
+  top:20rem;
+  width: 20vw;
 }

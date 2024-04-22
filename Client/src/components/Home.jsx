@@ -45,8 +45,21 @@ const Home = () => {
                 endpoint = '/api/showvehicles';
             } else if (modalContent === 'Suppliers') {
                 endpoint = '/api/showsuppliers';
-            } else if (modalContent === 'Dealers') {
+            }
+             else if (modalContent === 'Dealers') {
                 endpoint = '/api/showdealers';
+            }
+             else if (modalContent === 'Models') {
+                endpoint = '/api/showmodels';
+            }
+             else if (modalContent === 'Brands') {
+                endpoint = '/api/showbrands';
+            }
+             else if (modalContent === 'Plants') {
+                endpoint = '/api/showplants';
+            }
+             else if (modalContent === 'Sales') {
+                endpoint = '/api/showsales';
             }
             const response = await axios.get(`http://localhost:3000${endpoint}`);
             // console.log(response.data)
@@ -142,7 +155,7 @@ const Home = () => {
                                             <th>Phone No.</th>
                                             <th>Address</th>
                                             <th>Gender</th>
-                                            <th>Action</th>
+                                            {/* <th>Action</th> */}
                                         </tr>
                                     )}
                                     {modalContent === 'Vehicles' && (
@@ -153,7 +166,7 @@ const Home = () => {
                                             <th>Model ID</th>
                                             <th>Plant ID</th>
                                             <th>Supplier ID</th>
-                                            <th>Action</th>
+                                            {/* <th>Action</th> */}
                                         </tr>
                                     )}
                                     {modalContent === 'Suppliers' && (
@@ -162,7 +175,7 @@ const Home = () => {
                                             <th>name</th>
                                             <th>supplier_address</th>
                                             <th>plant_id</th>
-                                            <th>Action</th>
+                                            {/* <th>Action</th> */}
                                         </tr>
                                     )}
                                     {modalContent === 'Dealers' && (
@@ -172,7 +185,45 @@ const Home = () => {
                                             <th>phone_no.</th>
                                             <th>dealer_address</th>
                                             <th>gender</th>
-                                            <th>Action</th>
+                                            {/* <th>Action</th> */}
+                                        </tr>
+                                    )}
+                                    {modalContent === 'Models' && (
+                                        <tr>
+                                            <th>model_id</th>
+                                            <th>model_name</th>
+                                            <th>brand_id</th>
+                                            <th>price</th>
+                                            <th>category</th>
+                                            {/* <th>Action</th> */}
+                                        </tr>
+                                    )}
+                                    {modalContent === 'Brands' && (
+                                        <tr>
+                                            <th>brand_id</th>
+                                            <th>brand_name</th>
+                                            
+                                            {/* <th>Action</th> */}
+                                        </tr>
+                                    )}
+                                    {modalContent === 'Plants' && (
+                                        <tr>
+                                            <th>palnt_id</th>
+                                            <th>plant_name</th>
+                                            <th>plant_address</th>
+                                            
+                                            {/* <th>Action</th> */}
+                                        </tr>
+                                    )}
+                                    {modalContent === 'Sales' && (
+                                        <tr>
+                                            <th>sales_id</th>
+                                            <th>sale_date</th>
+                                            <th>dealer_id</th>
+                                            <th>customer_id</th>
+                                            <th>selling_price</th>
+                                            <th>VIN</th>
+                                            {/* <th>Action</th> */}
                                         </tr>
                                     )}
                                 </thead>
@@ -183,7 +234,7 @@ const Home = () => {
                                                 <>
                                                     <td>{item.customer_id}</td>
                                                     <td>{item.customer_name}</td>
-                                                    <td>{item.phone}</td>
+                                                    <td>{item.phone_no}</td>
                                                     <td>{item.address}</td>
                                                     <td>{item.gender}</td>
                                                 </>
@@ -215,7 +266,41 @@ const Home = () => {
                                                     <td>{item.gender}</td>
                                                 </>
                                             )}
-                                            <td><button className='btttn'>Delete</button></td>
+                                            {modalContent === 'Sales' && (
+                                                <>
+                                                    <td>{item.sales_id}</td>
+                                                    <td>{item.sale_date}</td>
+                                                    <td>{item.dealer_id}</td>
+                                                    <td>{item.customer_id}</td>
+                                                    <td>{item.selling_price}</td>
+                                                    <td>{item.vin}</td>
+                                                </>
+                                            )}
+                                            {modalContent === 'Models' && (
+                                                <>
+                                                    <td>{item.model_id}</td>
+                                                    <td>{item.name}</td>
+                                                    <td>{item.brand_id}</td>
+                                                    <td>{item.price}</td>
+                                                    <td>{item.category}</td>
+                                                </>
+                                            )}
+                                            {modalContent === 'Brands' && (
+                                                <>
+                                                    <td>{item.brand_id}</td>
+                                                    <td>{item.name}</td>
+                                                   
+                                                </>
+                                            )}
+                                            {modalContent === 'Plants' && (
+                                                <>
+                                                    <td>{item.plant_id}</td>
+                                                    <td>{item.plant_name}</td>
+                                                    <td>{item.plant_address}</td>
+                                                  
+                                                </>
+                                            )}
+                                            {/* <td><button className='btttn'>Delete</button></td> */}
                                         </tr>
                                     ))}
                                 </tbody>

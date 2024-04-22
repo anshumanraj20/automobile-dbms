@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import "./addcustomer.css";
+import "./adddealer.css";
 import axios from "axios";
 import { toast } from "react-toastify";
-const AddCustomers = () => {
+const AddDealers = () => {
   const [formData, setFormData] = useState({
-    customer_id: "",
-    customer_name: "",
-    phone: "",
-    address: "",
+    dealer_id: "",
+    dealer_name: "",
+    phone_no: "",
+    dealer_address: "",
     gender: "",
-    customer_id: "",
+    dealer_id: "",
   });
 
   const handleChange = (e) => {
@@ -24,9 +24,9 @@ const AddCustomers = () => {
     e.preventDefault();
     console.log(formData);
     axios
-      .post("http://localhost:3000/api/addcustomers", formData)
+      .post("http://localhost:3000/api/adddealers", formData)
       .then((response) => {
-        toast.success("Customer added successfully");
+        toast.success("dealer added successfully");
         console.log("Response:", response.data);
       })
       .catch((error) => {
@@ -35,32 +35,32 @@ const AddCustomers = () => {
       });
 
     setFormData({
-      customer_id: "",
-      customer_name: "",
-      phone: "",
-      address: "",
+      dealer_id: "",
+      dealer_name: "",
+      phone_no: "",
+      dealer_address: "",
       gender: "",
     });
   };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <h1>Customer Details</h1>
+      <h1>Dealer Details</h1>
       <label>
-        Customer ID:
+        Dealer ID:
         <input
           type="text"
-          name="customer_id"
-          value={formData.customer_id}
+          name="dealer_id"
+          value={formData.dealer_id}
           onChange={handleChange}
         />
       </label>
       <label>
-        Customer Name:
+        Dealer Name:
         <input
           type="text"
-          name="customer_name"
-          value={formData.customer_name}
+          name="dealer_name"
+          value={formData.dealer_name}
           onChange={handleChange}
         />
       </label>
@@ -69,8 +69,8 @@ const AddCustomers = () => {
         Phone No:
         <input
           type="tel"
-          name="phone"
-          value={formData.phone}
+          name="phone_no"
+          value={formData.phone_no}
           onChange={handleChange}
         />
       </label>
@@ -78,8 +78,8 @@ const AddCustomers = () => {
         Address:
         <input
           type="text"
-          name="address"
-          value={formData.address}
+          name="dealer_address"
+          value={formData.dealer_address}
           onChange={handleChange}
         />
       </label>
@@ -92,9 +92,9 @@ const AddCustomers = () => {
           <option value="O">Other</option>
         </select>
       </label>
-      <button type="submit">Add Customer</button>
+      <button type="submit">Add dealer</button>
     </form>
   );
 };
 
-export default AddCustomers;
+export default AddDealers;

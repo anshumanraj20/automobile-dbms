@@ -4,7 +4,7 @@ const OurTeam = () => {
   return (
     <>
     <div className='ourteam'>
-    <div className='heading'>OurTeam</div>
+    <div className='heading'>Our Team</div>
     <ul className='ul'>
     <li>TARUN KUMAR 2022UGCS118</li>
     <li>AYUSH KUMAR 2022UGCS010</li>

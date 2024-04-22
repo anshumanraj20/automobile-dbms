@@ -3,8 +3,6 @@ const express = require('express');
 const router = express.Router();
 
 
-
-// Route to handle inserting data into the customers table
 router.post('/', (req, res) => {
   const { brand_id, name } = req.body;
 

@@ -2,9 +2,6 @@ const pool = require('../db');
 const express = require('express');
 const router = express.Router();
 
-
-
-// Route to handle inserting data into the customers table
 router.post('/', (req, res) => {
   const { sales_id, sale_date, dealer_id, customer_id, selling_price,vin } = req.body;
 

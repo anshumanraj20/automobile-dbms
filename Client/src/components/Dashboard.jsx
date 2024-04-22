@@ -11,6 +11,7 @@ import { TbBrandAnsible } from "react-icons/tb";
 import { IoLogoModelS } from "react-icons/io";
 import { TbChartHistogram } from "react-icons/tb";
 import { RiTeamFill } from "react-icons/ri";
+import { RxBoxModel } from "react-icons/rx";
 
 function Dashboard() {
   return (
@@ -69,6 +70,17 @@ function Dashboard() {
                   </span>
                 </Link>
               </li>
+              <li className="w-100">
+                <Link
+                  to="/adddealers"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                     <FaUsers size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">
+                   Add Dealers
+                  </span>
+                </Link>
+              </li>
              
              
               <li className="w-100">
@@ -77,7 +89,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <TbBrandAnsible  size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Brands</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Brands</span>
                 </Link>
               </li>
               <li className="w-100">
@@ -86,7 +98,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <IoLogoModelS  size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Models</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Models</span>
                 </Link>
               </li>
               <li className="w-100">
@@ -95,7 +107,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <RiLogoutCircleLine size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Plants</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Plants</span>
                 </Link>
               </li>
               <li className="w-100">
@@ -104,7 +116,7 @@ function Dashboard() {
                   className="nav-link px-0 align-middle text-white"
                 >
                    <TbChartHistogram  size={"1.5em"}/>
-                  <span className="ms-2 d-none d-sm-inline">Sales</span>
+                  <span className="ms-2 d-none d-sm-inline">Add Sales</span>
                 </Link>
               </li>
               <li className="w-100">
@@ -114,6 +126,16 @@ function Dashboard() {
                 >
                    <RiTeamFill  size={"1.5em"}/>
                   <span className="ms-2 d-none d-sm-inline">Our Team</span>
+                </Link>
+              </li>
+              <li className="w-100">
+              <Link
+                  to="/ermodel"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                  
+                   <RxBoxModel  size={"1.5em"}/>
+                  <span className="ms-2 d-none d-sm-inline">ER model</span>
                 </Link>
               </li>
 

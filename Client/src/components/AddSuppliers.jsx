@@ -1,41 +1,45 @@
-import React, { useState } from 'react';
-import './addsupplier.css'
-import axios from 'axios';
-
+import React, { useState } from "react";
+import "./addsupplier.css";
+import axios from "axios";
+import { toast } from "react-toastify";
 const AddSupplierForm = () => {
   const [formData, setFormData] = useState({
-    supplier_id:'',
-    name: '',
-    supplier_address: '',
-    plant_id: ''
+    supplier_id: "",
+    name: "",
+    supplier_address: "",
+    plant_id: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
+    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can handle form submission, for now, just log the form data
     console.log(formData);
-    axios.post('http://localhost:3000/api/addsuppliers', formData)
-      .then(response => {
-        console.log('Response:', response.data);
+    axios
+      .post("http://localhost:3000/api/addsuppliers", formData)
+      .then((response) => {
+        console.log("Response:", response.data);
+        toast.success("Data added successfully");
       })
-      .catch(error => {
-        console.error('Error:', error);
+      .catch((error) => {
+        console.error("Error:", error);
+        toast.error(error.message);
       });
     // Clear form fields after submission
     setFormData({
-      supplier_id:'',
-      name: '',
-      supplier_address: '',
-      plant_id: ''
+      supplier_id: "",
+      name: "",
+      supplier_address: "",
+      plant_id: "",
     });
   };
 
